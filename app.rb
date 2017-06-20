@@ -22,6 +22,7 @@ end
 
 get '/named-cat' do
   @name = params[:name]
+  @worry = params[:bafflement]
   erb(:index)
 end
 
