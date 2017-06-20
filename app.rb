@@ -20,8 +20,12 @@ get '/top_secret' do
   "VERY SECRET WEBPAGE DO NOT ACCESS"
 end
 
-get '/cat' do
+get '/named-cat' do
+  @name = params[:name]
+  erb(:index)
+end
 
+get '/random-cat' do
   @name = ['Simon', 'Kevin', 'Clive'].sample
   erb(:index)
 end
