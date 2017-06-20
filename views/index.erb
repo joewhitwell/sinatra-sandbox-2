@@ -1,46 +1,36 @@
-  <img style= 'border: 10px dotted red;' src='http://f.cl.ly/items/0k0v3e2X3l2f3i1n1Y19/Screen%20Shot%202013-09-10%20at%2011.32.00.png'>
-  <h1> My name is Kevin. No actually it's <%= @name %>  </h1>
+<img style= 'border: 10px dotted red;' src='http://f.cl.ly/items/0k0v3e2X3l2f3i1n1Y19/Screen%20Shot%202013-09-10%20at%2011.32.00.png'>
+<h1> My name is Kevin.</h1>
 
-  <h1> <%= @worry %>  </h1>
+<% if @name.nil? %>
+<div align="center">
+  <h1>Let's go on a journey.</h1>
+</div>
+<% else %>
+<div align="center">
+  <h2>Hello <%= @name %></h2>
+</div>
+<% end %>
 
-  <form>
-    <%if @name==nil %>
+<h1> <%= @worry %> </h1>
 
-    <input type="text" name="name" placeholder="Enter a name for your cat">
-    <input type="submit" value="Blastoise">
+<form method="post" action="/named-cat">
+  <% if @name==nil %>
 
-    <% else %>
+  <input type="text" name="name" placeholder="What is your name?">
+  <input type="submit" value="Blastoise">
 
+  <% else %>
+
+<br>
   <br>
-    <br>
-  <div align="right">
-    <input type="text" name= "bafflement" placeholder="tell me my fears">
-    <input type= "submit" value ="seesaw">
-  </div>
-
-  </form>
-
-
-    <% end %>
-    
-
-  <!-- <%if @worry!=nil %> -->
-
-
-
-
-<!-- <form>
-  <input type="text" name= "bafflement" placeholder="tell me your worries">
+<div align="right">
+  <input type="text" name= "bafflement" placeholder="tell me your fears">
   <input type= "submit" value ="seesaw">
-</form> -->
+</div>
 
-<!-- <div align="center">
-  Help me.
-</div> -->
+</form>
 
-<!-- <p>You can edit the CSS below to experiment with border styles!</p> -->
-<!-- <div class=fun-border> sdfghj  </div> -->
+<form class="" action="index.html" method="post">
 
-<!-- # border: 1px;
-# border: 2px dotted;
-# border: medium dashed green; -->
+</form>
+<% end %>

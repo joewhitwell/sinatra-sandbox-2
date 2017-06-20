@@ -20,7 +20,11 @@ get '/top_secret' do
   "VERY SECRET WEBPAGE DO NOT ACCESS"
 end
 
-get '/named-cat' do
+get '/form' do
+  erb(:index)
+end
+
+post '/named-cat' do
   @name = params[:name]
   @worry = params[:bafflement]
   erb(:index)
